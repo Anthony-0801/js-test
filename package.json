@@ -1,0 +1,19 @@
+{
+  "name": "js-test",
+  "version": "1.0.0",
+  "description": "My repository in creating some test in Javascript",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "mocha"
+  },
+  "author": "Anthony A. Cabulang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mocha": "^11.5.0",
+    "nodemon": "^3.1.10"
+  }
+}
