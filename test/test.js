@@ -1,4 +1,4 @@
-import { pow } from "../index.js";
+import { calculateShipping, pow } from "../index.js";
 import { assert } from "chai";
 
 describe("pow", function () {
@@ -32,4 +32,29 @@ describe("pow", function () {
   after(() => {
     console.log("All tests for pow function completed");
   });
+});
+
+describe("calculateShipping", ()=> {
+    let expected = 0;
+
+    function makeTest(weight) {
+        expected = (5.99 + (weight * 2.50)).toFixed(2);
+    }
+    
+    // test that will iterate through the weights 1 to 5
+    for (let weight = 1; weight <= 5; weight++) {
+        makeTest(weight);
+        it(`calculates the shipping for ${weight}kg`, () => {
+            assert.equal(calculateShipping(weight), expected);
+        });
+    }
+
+    it("calculates the shipping for 5kg", ()=> {
+        makeTest(5);
+        assert.equal(calculateShipping(5), expected);
+    });
+
+    // it("this shit calculates the shipping", ()=> {
+    //     assert.equal(calculateShipping(5), expected)
+    // })
 });
